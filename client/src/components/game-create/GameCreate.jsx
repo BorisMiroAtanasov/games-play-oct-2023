@@ -1,11 +1,16 @@
+import { create } from "../../services/gameService";
+
 export default function GameCreate() {
-  const createGameSubmitHandler = (e) => {
+  const createGameSubmitHandler = async (e) => {
     e.preventDefault();
 
     const gameData = Object.fromEntries(
       new FormData(e.currentTarget)
     );
     console.log(gameData);
+
+    const result = await create(gameData);
+    console.log(result);
   };
   return (
     <section id="create-page" className="auth">
