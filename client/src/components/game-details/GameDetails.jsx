@@ -14,7 +14,7 @@ export default function GameDetails(){
         gameService.getOne(gameId)
         .then(setGame)
 
-        commendService.getAll()
+        commendService.getAll(gameId)
         .then(setComments)
 
     },[gameId]);
